@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TodoListItemComponent {
   @Input() taskTitle = 'Learn Angular';
+
+  @Output() taskCompleted = new EventEmitter<void>();
 }

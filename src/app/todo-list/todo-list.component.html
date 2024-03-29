@@ -1,8 +1,11 @@
 <input #titleInput name="taskTitle" type="text" placeholder="Add a new task" />
 <button type="submit" (click)="addTask(titleInput.value)">Add Task</button>
 
-<hr />
-
-@for (task of tasks; track $index) {
-<app-todo-list-item [taskTitle]="task"></app-todo-list-item>
-}
+<div class="items-container">
+  @for (task of tasks; track i; let i = $index) {
+  <app-todo-list-item
+    [taskTitle]="task"
+    (taskCompleted)="removeTask(i)"
+  ></app-todo-list-item>
+  }
+</div>

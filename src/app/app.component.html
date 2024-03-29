@@ -1,4 +1,21 @@
 <header>Angular Lab</header>
 <section>
-   <app-todo-list></app-todo-list>
+  <h3>Todo List</h3>
+  <app-todo-list></app-todo-list>
+
+  <hr />
+
+  <h3>Counter</h3>
+  <app-counter></app-counter>
+
+  <hr />
+
+  <h3>Random Name Generator</h3>
+
+  <app-random-name-generator
+    [nameLength]="5"
+    (nameGenerated)="onNameGenerated($event)"
+  ></app-random-name-generator>
+
+  <p>Generated Name: {{ randomName }}</p>
 </section>

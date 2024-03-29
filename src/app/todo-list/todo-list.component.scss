@@ -1,0 +1,10 @@
+:host {
+  display: grid;
+  width: 400px;
+  gap: 10px;
+  grid-template-columns: 1fr 100px;
+}
+
+.items-container {
+  grid-column: 1/ 3;
+}
