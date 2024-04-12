@@ -1,3 +1,16 @@
-<button (click)="increment()">Increment</button>
-<p>{{ count }}</p>
-<button (click)="decrement()">Decrement</button>
+<button *ngIf="!isBiggerThanTen" (click)="increment()">Increment</button>
+<p appHighlight [color]="'yellow'">{{ count }}</p>
+<button (click)="decrement()">{{'DECREMENT' | lowercase }}</button>
+<hr>
+ {{
+    ob | json
+ }}
+<!-- <input type="number" > -->
+
+<ul>
+    <li *ngFor="let name of names">
+        {{name}}
+    </li>
+</ul>
+
+{{'Nika' | helloWorld}}
