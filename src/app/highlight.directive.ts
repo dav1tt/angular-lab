@@ -4,7 +4,7 @@ import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/cor
   selector: '[appHighlight]',
   standalone: true
 })
-export class HighlightDirective implements OnInit  {
+export class HighlightDirective  {
   @Input() color!: string;
 
   @HostListener('mouseenter') onMouseOver(){
@@ -16,10 +16,7 @@ export class HighlightDirective implements OnInit  {
   }
 
   constructor(private el: ElementRef) {}
-  
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
 
   highlightElement(color: string){
     this.el.nativeElement.style.background = color;

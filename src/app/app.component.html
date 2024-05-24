@@ -24,4 +24,11 @@
   
 </app-card> -->
 
-<app-counter></app-counter>
+<div class="active">
+  <app-counter></app-counter>
+  <app-counter></app-counter>
+</div>
+
+@for (hero of heroes; track $index) {
+<h1>{{hero}}</h1>
+}
