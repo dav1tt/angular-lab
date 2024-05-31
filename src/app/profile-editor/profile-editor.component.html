@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+        <label for="surname">surname</label>
+        <input id="surname" type="text" formControlName="surname">
+    </div>
+
+    <div>
+        <label for="phoneNumber">Phone</label>
+        <input id="phoneNumber" type="tel" formControlName="phoneNumber">
+    </div>
+
+    <div>
+        <label for="email">E-Mail</label>
+        <input id="email" type="email" formControlName="email">
+    </div>
+
+    <div formGroupName="address" class="address">
+        <h1>Address</h1>
+        <div>
+            <label for="street">Street</label>
+            <input id="street" type="text" formControlName="street">
+        </div>
+
+        <div>
+            <label for="city">City</label>
+            <input id="city" type="text" formControlName="city">
+        </div>
+
+        <div>
+            <label for="country">Country</label>
+            <input id="country" type="text" formControlName="country">
+        </div>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<button (click)="setValues()">Set Values</button>

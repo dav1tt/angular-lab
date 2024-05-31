@@ -1,0 +1,82 @@
+<div [hidden]="submitted">
+  <form #heroForm="ngForm" (ngSubmit)="submitted = true">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        [(ngModel)]="hero.name"
+        required
+        #name="ngModel"
+        [class.is-invalid]="name.invalid && name.dirty"
+        [class.is-valid]="name.valid && name.pristine"
+      />
+      <div [hidden]="name.valid || name.pristine" class="invalid-feedback">
+        Name is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="heroClass" class="form-label">Class</label>
+      <input
+        type="text"
+        name="heroClass"
+        class="form-control"
+        id="heroClass"
+        [(ngModel)]="hero.heroClass"
+        #heroClass="ngModel"
+        required
+        [class.is-invalid]="heroClass.invalid && heroClass.dirty"
+        [class.is-valid]="heroClass.valid && heroClass.pristine"
+      />
+      <div
+        [hidden]="heroClass.valid || heroClass.pristine"
+        class="invalid-feedback"
+      >
+        HeroClass is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="skill"></label>
+      <select
+        id="skill"
+        name="skill"
+        class="form-select"
+        [(ngModel)]="hero.skill"
+        required
+      >
+        @for (skill of skills; track $index) {
+        <option [value]="skill">{{ skill }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="race" class="form-label">Race</label>
+      <select id="race" name="race" class="form-select" [(ngModel)]="hero.race">
+        @for (race of races; track $index) {
+        <option [value]="race">{{ race }}</option>
+        }
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Hero</h4>
+
+  <p>name: {{ hero.name }}</p>
+  <p>class: {{ hero.heroClass }}</p>
+  <p>
+    skill:
+    {{ hero.skill }}
+  </p>
+  <p>race: {{ hero.race }}</p>
+
+  <button class="btn btn-primary" (click)="submitted = false">Edit</button>
+</div>

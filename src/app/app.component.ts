@@ -8,6 +8,10 @@ import { CardContentComponent } from './card-content/card-content.component';
 import { CardTitleComponent } from './card-title/card-title.component';
 import { HighlightDirective } from './highlight.directive';
 import { HeroService } from './hero.service';
+import { FavoriteColorTemplateComponent } from './favorite-color-template/favorite-color-template.component';
+import { FavoriteColorReactiveComponent } from './favorite-color-reactive/favorite-color-reactive.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +24,11 @@ import { HeroService } from './hero.service';
     CardComponent,
     CardTitleComponent,
     CardContentComponent,
-    HighlightDirective
+    HighlightDirective,
+    FavoriteColorTemplateComponent,
+    FavoriteColorReactiveComponent,
+    ProfileEditorComponent,
+    HeroFormComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
